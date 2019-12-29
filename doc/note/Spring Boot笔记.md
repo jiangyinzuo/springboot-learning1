@@ -89,6 +89,9 @@ http://www.gulixueyuan.com/ 谷粒学院
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.9.RELEASE</version>
     </parent>
+```
+---
+```xml
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -130,8 +133,6 @@ public class HelloController {
 
 ```
 
-
-
 ### 5、运行主程序测试
 
 ### 6、简化部署
@@ -163,17 +164,17 @@ public class HelloController {
     <version>1.5.9.RELEASE</version>
 </parent>
 
+```
 他的父项目是
+```xml
 <parent>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-dependencies</artifactId>
   <version>1.5.9.RELEASE</version>
   <relativePath>../../spring-boot-dependencies</relativePath>
 </parent>
-他来真正管理Spring Boot应用里面的所有依赖版本；
-
 ```
-
+他来真正管理Spring Boot应用里面的所有依赖版本；
 Spring Boot的版本仲裁中心；
 
 以后我们导入依赖默认是不需要写版本；（没有在dependencies里面管理的依赖自然需要声明版本号）
@@ -189,13 +190,10 @@ Spring Boot的版本仲裁中心；
 
 **spring-boot-starter**-==web==：
 
-​	spring-boot-starter：spring-boot场景启动器；帮我们导入了web模块正常运行所依赖的组件；
-
-
+​spring-boot-starter：spring-boot场景启动器；
+帮我们导入了web模块正常运行所依赖的组件；
 
 Spring Boot将所有的功能场景都抽取出来，做成一个个的starters（启动器），只需要在项目里面引入这些starter相关场景的所有依赖都会导入进来。要用什么功能就导入什么场景的启动器
-
-
 
 ### 2、主程序类，主入口类
 
