@@ -1,0 +1,11 @@
+# From java image, version : 11
+FROM java:latest
+
+# 挂载app目录
+VOLUME /app
+
+# COPY or ADD to image
+ADD app.jar /app/
+
+EXPOSE 8081
+ENTRYPOINT ["java",  "-Dserver.port=8081", "-jar", "/app/app.jar"]
